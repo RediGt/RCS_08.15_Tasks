@@ -49,9 +49,9 @@ namespace RCS_08._15
                         break;
                     case "4":
                         Console.Write("Input file name:");
-                        string fileNameNew = Console.ReadLine() + ".txt";
+                        fileName = Console.ReadLine() + ".txt";
                         a = null;
-                        a = FileIO.Read(fileNameNew);
+                        a = FileIO.Read(fileName);
                         break;
                     case "5":
                         FileIO.Write(a, fileName);
