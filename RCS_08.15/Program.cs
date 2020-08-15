@@ -63,7 +63,7 @@ namespace RCS_08._15
                         a = null;
                         break;
                     case "Q":
-                        FileIO.Write(a, fileName);
+                        //FileIO.Write(a, fileName);
                         break;
                     default:
                         Console.WriteLine("Incorrect input.\n");
