@@ -23,8 +23,7 @@ namespace RCS_08._15
             for (int i = 0; i < a.Count; i++)
             {
                 Console.WriteLine("{0}      | {1}", (i+1), a[i]);
-            }
-                
+            }                
         }
 
         static void UserMenu(List<string> a, string fileName)
@@ -46,7 +45,10 @@ namespace RCS_08._15
                         DeleteString(a);
                         break;
                     case "4":
-                        a = FileIO.Read();
+                        Console.Write("Input file name:");
+                        string fileNameNew = Console.ReadLine() + ".txt";
+                        a = null;
+                        a = FileIO.Read(fileNameNew);
                         break;
                     case "5":
                         FileIO.Write(a, fileName);
@@ -127,5 +129,6 @@ namespace RCS_08._15
             string fileName = Console.ReadLine() + ".txt";
             FileIO.Write(a, fileName);
         }
+
     }
 }

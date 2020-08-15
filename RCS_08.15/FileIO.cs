@@ -7,13 +7,13 @@ namespace RCS_08._15
 {
     class FileIO
     {
-        public static List<string> Read()
+        public static List<string> Read(string fileName)
         {
             String line;
             List<string> a = new List<string>();
             try
             {
-                StreamReader sr = new StreamReader("Test.txt");
+                StreamReader sr = new StreamReader(fileName);
 
                 line = sr.ReadLine();
 
