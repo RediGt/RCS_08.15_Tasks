@@ -18,12 +18,15 @@ namespace RCS_08._15
         }
        
         static void PrintList(List<string> a)
-        {
-            Console.WriteLine("No     | Text");
-            for (int i = 0; i < a.Count; i++)
+        {        
+            if (a != null)
             {
-                Console.WriteLine("{0}      | {1}", (i+1), a[i]);
-            }                
+                Console.WriteLine("No     | Text");
+                for (int i = 0; i < a.Count; i++)
+                {
+                    Console.WriteLine("{0}      | {1}", (i+1), a[i]);
+                }    
+            }                       
         }
 
         static void UserMenu(List<string> a, string fileName)
@@ -56,6 +59,9 @@ namespace RCS_08._15
                     case "6":
                         SaveAs(a);
                         break;
+                    case "7":
+                        a = null;
+                        break;
                     case "Q":
                         FileIO.Write(a, fileName);
                         break;
@@ -76,6 +82,7 @@ namespace RCS_08._15
                 "4 - load text\n" +
                 "5 - save text\n" +
                 "6 - save AS text\n" +
+                "7 - new document\n" +
                 "q - exit\n");
             Console.Write("Make your choice: ");
 
