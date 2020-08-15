@@ -32,11 +32,11 @@ namespace RCS_08._15
             }
         }
 
-        public static void Write(List<string> a)
+        public static void Write(List<string> a, string fileName)
         {
             try
             {
-                StreamWriter sw = new StreamWriter("Test.txt", false);
+                StreamWriter sw = new StreamWriter(fileName, false);
 
                 foreach (var item in a)
                     sw.WriteLine(item);

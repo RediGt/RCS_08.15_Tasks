@@ -13,8 +13,8 @@ namespace RCS_08._15
         static void TaskEx()
         {
             List<string> a = new List<string>();
-
-            UserMenu(a);
+            string fileName = "Test.txt";
+            UserMenu(a, fileName);
         }
        
         static void PrintList(List<string> a)
@@ -27,7 +27,7 @@ namespace RCS_08._15
                 
         }
 
-        static void UserMenu(List<string> a)
+        static void UserMenu(List<string> a, string fileName)
         {
             string userChoice = null;
             while (userChoice != "Q")
@@ -49,10 +49,13 @@ namespace RCS_08._15
                         a = FileIO.Read();
                         break;
                     case "5":
-                        FileIO.Write(a);
+                        FileIO.Write(a, fileName);
+                        break;
+                    case "6":
+                        SaveAs(a);
                         break;
                     case "Q":
-                        FileIO.Write(a);
+                        FileIO.Write(a, fileName);
                         break;
                     default:
                         Console.WriteLine("Incorrect input.\n");
@@ -70,6 +73,7 @@ namespace RCS_08._15
                 "3 - delete string\n" +
                 "4 - load text\n" +
                 "5 - save text\n" +
+                "6 - save AS text\n" +
                 "q - exit\n");
             Console.Write("Make your choice: ");
 
@@ -115,6 +119,13 @@ namespace RCS_08._15
             }
             while (!correctInput);
             return Convert.ToInt32(textStr);
+        }
+
+        static void SaveAs(List<string> a)
+        {
+            Console.Write("Input file name:");
+            string fileName = Console.ReadLine() + ".txt";
+            FileIO.Write(a, fileName);
         }
     }
 }
