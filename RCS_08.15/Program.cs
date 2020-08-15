@@ -57,7 +57,7 @@ namespace RCS_08._15
                         FileIO.Write(a, fileName);
                         break;
                     case "6":
-                        SaveAs(a);
+                        SaveAs(a, ref fileName);
                         break;
                     case "7":
                         a = null;
@@ -130,10 +130,10 @@ namespace RCS_08._15
             return Convert.ToInt32(textStr);
         }
 
-        static void SaveAs(List<string> a)
+        static void SaveAs(List<string> a, ref string fileName)
         {
             Console.Write("Input file name:");
-            string fileName = Console.ReadLine() + ".txt";
+            fileName = Console.ReadLine() + ".txt";
             FileIO.Write(a, fileName);
         }
 
